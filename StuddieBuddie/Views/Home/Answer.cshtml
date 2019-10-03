@@ -1,0 +1,58 @@
+﻿@model StuddieBuddie.Models.AnswerModel
+@using StuddieBuddie.Code
+
+@{
+    ViewBag.Title = "Answer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h5>
+    Test: @Model.Question.TestTitle
+    <br />
+    Questions: @Model.Question.QuestionNumber <text>/</text> @Model.Question.TestQuestions
+</h5>
+<hr />
+
+@if (Model.Correct)
+{
+    <h3 id="correct">@Common.CORRE_Q_TXT</h3>
+}
+else
+{
+    <h3 id="error">@Common.WRONG_Q_TXT</h3>
+}
+
+@if (Model.Correct)
+{
+    <hr />
+    <h3>@Model.Question.QuestionText</h3>
+
+    foreach (var answer in Model.Question.Answers)
+    {
+        if (answer.Correct)
+        {
+            <h5>&nbsp; @answer.Text</h5>
+        }
+    }
+    <br />
+}
+
+<hr />
+
+@if (Model.Correct)
+{
+    if (Model.Question.QuestionNumber == Model.Question.TestQuestions)
+    {
+        <input id="next" type="button" value="Finish" onclick="location.href='@Url.Action("Question", "Home", new { repeat_question = false })'" />
+    }
+    else
+    {
+        <input id="next" type="button" value="Next" onclick="location.href='@Url.Action("Question", "Home", new { repeat_question = false })'" />
+    }
+}
+else
+{
+    <input id="again" type="button" value="Try Again" onclick="location.href='@Url.Action("Question", "Home", new { repeat_question = true })'" />
+}
+
+

@@ -1,0 +1,96 @@
+﻿/* elements */
+
+body {
+    width: 750px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+    color: dimgrey;
+    font-size: 24px;
+}
+
+input[type="submit"], input[type="button"] {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 50px;
+    width: 100%;
+    border: 0px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: White;
+    /* iOS fix */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 50px;
+    border: solid 2px dimgrey;
+    box-sizing: border-box;
+    padding-left: 5px;
+    font-size: 24px;
+    text-align: center;
+}
+
+hr {
+    border: solid 2px dimgrey;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* classes */
+
+.content {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* id's */
+#upload {
+    background-color: darkorange;
+}
+
+#take {
+    background-color: mediumseagreen;
+}
+
+#answer {
+    background-color: darkblue;
+}
+
+#correct {
+    color: mediumseagreen;
+}
+
+#error {
+    color: darkorange;
+}
+
+#next {
+    background-color: mediumseagreen;
+}
+
+#again {
+    background-color: darkorange;
+}
+
+#delete {
+    width: 8%;
+    background-color: red;
+}
+
+#file {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}

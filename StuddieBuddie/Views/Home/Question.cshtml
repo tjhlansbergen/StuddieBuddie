@@ -1,0 +1,27 @@
+﻿@model StuddieBuddie.Code.Question
+
+@{
+    ViewBag.Title = "Question";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h5>
+    Test: @Model.TestTitle
+    <br />
+    Question: @Model.QuestionNumber <text>/</text> @Model.TestQuestions
+</h5>
+
+<hr />
+<h3>@Model.QuestionText</h3>
+
+@foreach (var answer in Model.Answers)
+{
+    <input id="answer" type="button" value="@answer.Text" onclick="location.href='@Url.Action("Answer", "Home", new { correct = answer.Correct})'" />
+}
+<br />
+<hr />
+<a href=@Url.Action("Index") role="button">&larr; Quit</a>
+
+

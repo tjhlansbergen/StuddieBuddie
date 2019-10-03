@@ -1,0 +1,25 @@
+﻿@model StuddieBuddie.Models.IndexModel
+
+@{
+    ViewBag.Title = "Welcome!";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content">
+
+    <input id="upload" type="button" value="Upload new test" onclick="location.href='@Url.Action("Upload", "Home")'" />
+
+    <br /><hr />
+
+    @foreach (var test in Model.Tests)
+    {
+        <div class="container">
+            <input id="take" type="button" value="@test.Value.Title" onclick="location.href='@Url.Action("FirstQuestion", "Home", new { guid = test.Key })'" />
+            <div>&nbsp;</div>
+            <input id="delete" type="button" value="&#10006;" onclick="location.href='@Url.Action("DeleteTest", "Home", new { guid = test.Key })'" />
+        </div>
+    }
+
+    <br />
+
+</div>

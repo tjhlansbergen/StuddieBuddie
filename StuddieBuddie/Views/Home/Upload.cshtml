@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Upload Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.ActionLink("Download sample file (JSON format)", "DownloadSample", "Home", null, new { @target="_blank" })
+
+<hr />
+
+@using (Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" id="file" />
+    <input type="submit" name="submit" id="upload" value="Upload" />
+
+}
+

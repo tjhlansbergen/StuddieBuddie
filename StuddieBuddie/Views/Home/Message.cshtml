@@ -1,0 +1,23 @@
+﻿@model StuddieBuddie.Models.MessageModel
+
+@{
+    ViewBag.Title = "Message";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 id="error">
+    @Html.DisplayFor(m => m.Message1)
+</h2>
+
+<h4>
+    @Model.Message2
+</h4>
+
+<h4>
+    @Model.Message3
+</h4>
+
+<br />
+
+<a href=@Url.Action("Index") role="button">&larr; Back to start</a>
